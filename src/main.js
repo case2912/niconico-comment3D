@@ -20,13 +20,13 @@ gr.registerComponent('Rotate', {
 });
 
 socket.on('connect', function() {
-    console.log('yea!!');
+    console.log('connected!');
 });
 var data = {
     comment: null
 };
 
-socket.on('date', function(_data) {
+socket.on('text', function(_data) {
     data.comment = _data;
     console.log(_data);
 });

@@ -1,7 +1,7 @@
 {
-    "name": "nodep",
+    "name": "niconico-comment3D",
     "version": "1.0.0",
-    "description": "a application",
+    "description": "niconico-comment3Dviewer",
     "scripts": {
         "build": "babel src --out-dir lib",
         "postbuild": "browserify lib/main.js -o lib/out.js",
@@ -17,7 +17,6 @@
     },
     "dependencies": {
         "cheerio": "^0.22.0",
-        "koa": "^2.0.0",
         "request": "^2.79.0"
     }
 }
