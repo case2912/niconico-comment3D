@@ -1,0 +1,1 @@
+../grimoirejs-physics/register/grimoire-physics.js
