@@ -1,6 +1,9 @@
 <goml>
     <import-material typeName="mat" src="index.sort" />
-    <scene gravity="0,-5,0">
+    <scene>
+        <scene.components>
+            <PhysicsWorld gravity="0,-5,0"></PhysicsWorld>
+        </scene.components>
         <camera position="2.329845666885376,-3.287705898284912,10.930932998657227" rotation="16.022012251358515,12.526117114512342,-3.5090524342161955">
             <camera.components>
                 <MouseCameraControl></MouseCameraControl>
