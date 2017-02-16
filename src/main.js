@@ -1,3 +1,8 @@
+import "./regenerator";
+import "grimoirejs/register";
+import "grimoirejs-math/register";
+import "grimoirejs-fundamental/register";
+import "grimoirejs-text/register";
 var client = require('socket.io-client');
 var socket = client.connect('http://localhost:3000');
 var WatchJS = require("watchjs")
@@ -15,9 +20,19 @@ gr.registerComponent('Rotate', {
     },
     $update: function() {
         this.phi += this.getAttribute('speed');
-        this.node.setAttribute('rotation', 0 + ',' + this.phi + ',' + 0);
+        this.node.setAttribute('rotation', 0 + ',' + this.phi + ',' + -14.3);
     },
 });
+
+gr.registerComponent("Reset", {
+    $mount: function() {
+        this.node.watch("positoin", (value) => {
+            if (value.Y < -50) {
+                this.node.remove();
+            }
+        });
+    }
+})
 
 socket.on('connect', function() {
     console.log('connected!');
@@ -39,12 +54,17 @@ gr(function() {
         speed: 0.2
     });
     watch(data, "comment", function() {
-        const n = scene.addChildByName("text", {
-            text: data.comment,
-            position: [Math.random() * 3 - 2, 10, Math.random() * 3 - 2],
-            rotation: `0,${Math.random()*360},0`,
-            scale: "1",
-        })
-        n.addComponent("RigidBody");
+        if (document.hasFocus()) {
+            const n = scene.addChildByName("text", {
+                text: data.comment,
+                position: [Math.random() * 10 - 5, 10, Math.random() * 4 - 2],
+                rotation: `0,${Math.random() * 90 - 45},0`,
+                size: 2,
+                font: "bold 18px 'ヒラギノ角ゴ'",
+                material: "new(text-back)"
+            });
+            const scale = n.getAttribute("scale");
+            n.addComponent("RigidBody");
+        }
     });
 });

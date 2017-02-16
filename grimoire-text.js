@@ -1,1 +1,0 @@
-../grimoirejs-text/register/grimoire-text.js
