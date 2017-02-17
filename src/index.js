@@ -16,7 +16,7 @@ var config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 const init = async() => {
     setInterval(function() {
         if (socket !== null) {
-            socket.emit('text', Math.random().toString(36).slice(-8));
+            socket.emit('text', Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8));
         }
     }, 1000);
     // const nicolive = new Nicolive();

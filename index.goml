@@ -1,17 +1,26 @@
 <goml>
-    <import-material typeName="mat" src="index.sort" />
+    <import-material typeName="mat" src="./index.sort" />
+    <import-material typeName="background" src="./niconico-background.sort" />
+    <renderer>
+        <render-scene></render-scene>
+    </renderer>
     <scene>
         <scene.components>
-            <PhysicsWorld gravity="0,-5,0"></PhysicsWorld>
+            <PhysicsWorld></PhysicsWorld>
         </scene.components>
-        <camera position="2.329845666885376,-3.287705898284912,10.930932998657227" rotation="16.022012251358515,12.526117114512342,-3.5090524342161955">
+        <camera position="0,0,16">
+            <mesh material="new(background)" position="0,0,-20"></mesh>
+            <object position="2,-2.5,-7.5">
+            <text text="grimoire.gl" font="30px 'ヒラギノ角ゴ'" size="1.5" position="0,0,0"></text>
+            <!-- <mesh texture="./logo.svg" scale="0.4" position="-4.01,-0.03,0"></mesh> -->
+          </object>
             <camera.components>
                 <MouseCameraControl></MouseCameraControl>
             </camera.components>
         </camera>
         <mesh id="mesh" texture="./earth.jpg" position="0,-4,0" scale="4" geometry="sphere" material="new(mat)" targetBuffer="wireframe">
             <mesh.components>
-                <RigidBody mass="0" shape="sphere" velocity="0,10,0"></RigidBody>
+                <RigidBody mass="0" shape="sphere" velocity="0,10,-5"></RigidBody>
             </mesh.components>
         </mesh>
     </scene>
