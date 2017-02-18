@@ -20,7 +20,7 @@
     "grimoirejs": "^0.14.7",
     "grimoirejs-fundamental": "^0.12.10",
     "grimoirejs-math": "^1.12.1",
-    "grimoirejs-text": "^1.0.6",
+    "grimoirejs-text": "^1.0.8",
     "request": "^2.79.0"
   }
 }
