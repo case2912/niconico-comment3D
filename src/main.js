@@ -27,7 +27,7 @@ gr.registerComponent('Rotate', {
 gr.registerComponent("Reset", {
     $mount: function() {
         this.node.watch("positoin", (value) => {
-            if (value.Y < -50) {
+            if (value.Y < -200) {
                 const r = this.node.getComponent("RigidBody");
                 r.World.remove(r.Body);
                 this.node.remove();
