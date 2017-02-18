@@ -61,8 +61,8 @@ gr(function() {
                 text: data.comment,
                 position: [Math.random() * 10 - 5, 10, Math.random() * 4 - 2],
                 rotation: `0,${Math.random() * 90 - 45},0`,
-                size: 2,
-                font: "bold 18px 'ヒラギノ角ゴ'",
+                size: 1.5,
+                font: "bold 30px 'ヒラギノ角ゴ'",
                 material: "new(text-back)"
             });
             const scale = n.getAttribute("scale");

@@ -9,18 +9,14 @@
             <PhysicsWorld></PhysicsWorld>
         </scene.components>
         <camera position="0,0,16">
-            <mesh material="new(background)" position="0,0,-130"></mesh>
+            <mesh material="new(background)" position="0,0,-130" march="32"></mesh>
             <object position="2,-2.5,-7.5">
-          <object position="0.5,0,0">
-            <text text="grimoire.gl" font="30px 'ヒラギノ角ゴ'" size="1.5" position="0,0,0"></text>
-            <mesh texture="./logo.png" scale="0.6" position="-5.2,-0.03,0"></mesh>
-          </object>
             </object>
             <camera.components>
                 <MouseCameraControl></MouseCameraControl>
             </camera.components>
         </camera>
-        <mesh id="mesh" texture="./earth.jpg" position="0,-4,0" scale="4" geometry="sphere" material="new(mat)" targetBuffer="wireframe">
+        <mesh id="mesh" texture="./earth.jpg" position="0,-4,0" scale="4" geometry="sphere" material="new(mat)" targetBuffer="wireframe" >
             <mesh.components>
                 <RigidBody mass="0" shape="sphere" velocity="0,10,-5"></RigidBody>
             </mesh.components>
